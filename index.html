@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Разработка простого модульного окна</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="baner">
+        <div class="top-baner">
+            <h1>Разработка модульного окна</h1>
+            <button class="open" id="open">Открыть</button>
+        </div>
+    </header>
+    <div class="modal" id ="modal">
+        <div class="modal-bg"></div>
+        <div class="modal-body">
+            <button class="close" id ="close" title="Закрыть">Закрыть</button>
+            <h2>Форма регистрации</h2>
+            <form action="">
+                <p>* Введите имя:</p>
+                <input type="text" name="name" placeholder="Иван">
+                <p>* Введите номер телефона:</p>
+                <input type="text" name="phone" placeholder="+7(495)568-89-75">
+                <br><button class="sub">Отправить</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        let button = document.getElementById('open')
+        let modal = document.getElementById('modal')
+        let close = document.getElementById('close')
+
+        button.addEventListener('click', function(event) {
+            event.preventDefault()
+            modal.style.display = 'block'
+        })
+
+        close.addEventListener('click', function(event) {
+            event.preventDefault()
+            modal.style.display = 'none'
+        })
+    </script>
+</body>
+</html>
